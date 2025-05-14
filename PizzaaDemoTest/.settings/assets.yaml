@@ -1,0 +1,85 @@
+name: PizzaaDemoTest
+version: 2
+projectReferences: 
+resources: 
+  - name: .classpath
+    type: com.ibm.rational.test.lt.classpath
+    dependencies: 
+      - path: /PizzaaDemoTest/src
+        type: javaClasspath
+  - name: 'Order a Pizza.recdata'
+  - name: 'Order a Pizza.recsession'
+    type: com.ibm.rational.test.lt.recsession
+    dependencies: 
+      - path: '/PizzaaDemoTest/Order a Pizza.recdata'
+        type: recsessionRecdata
+  - name: 'Order a Pizza.testsuite'
+    type: com.ibm.rational.test.lt.test
+    version: 11.0.4.0
+    properties: 
+      features: 'com.ibm.rational.test.lt.feature.lt,com.ibm.rational.test.lt.feature.mobileweb'
+      type: com.ibm.rational.test.lt.lttest
+      uid: A1F03006C2235D80DE46B73135376635
+    dependencies: 
+      - path: '/PizzaaDemoTest/Order a Pizza.recsession'
+        type: testRecsession
+      - path: /PizzaaDemoTest/b_Pizza_App_1a3.ma
+        type: test#moeb.applicationPackage
+  - name: UITest.recdata
+  - name: UITest.recsession
+    type: com.ibm.rational.test.lt.recsession
+    dependencies: 
+      - path: /PizzaaDemoTest/UITest.recdata
+        type: recsessionRecdata
+  - name: UITest.testsuite
+    type: com.ibm.rational.test.lt.test
+    version: 11.0.4.0
+    properties: 
+      features: 'com.ibm.rational.test.lt.feature.lt,com.ibm.rational.test.lt.feature.mobileweb'
+      type: com.ibm.rational.test.lt.lttest
+      uid: A1F02F1EEE618C20D111B66664356536
+    dependencies: 
+      - path: /PizzaaDemoTest/UITest.recsession
+        type: testRecsession
+      - path: /PizzaaDemoTest/b_Pizza_App_1a3.ma
+        type: test#moeb.applicationPackage
+  - name: _google_com_1e2.ma
+    type: moeb.applicationPackage
+  - name: b_Pizza_App_1a3.ma
+    type: moeb.applicationPackage
+  - name: google.recdata
+  - name: google.recsession
+    type: com.ibm.rational.test.lt.recsession
+    dependencies: 
+      - path: /PizzaaDemoTest/google.recdata
+        type: recsessionRecdata
+  - name: google.testsuite
+    type: com.ibm.rational.test.lt.test
+    version: 11.0.4.0
+    properties: 
+      features: 'com.ibm.rational.test.lt.feature.lt,com.ibm.rational.test.lt.feature.mobileweb'
+      type: com.ibm.rational.test.lt.lttest
+      uid: A1F030041D5D6DB0DE46B73135376635
+    dependencies: 
+      - path: /PizzaaDemoTest/_google_com_1e2.ma
+        type: test#moeb.applicationPackage
+      - path: /PizzaaDemoTest/google.recsession
+        type: testRecsession
+  - name: httptest.recdata
+  - name: httptest.recsession
+    type: com.ibm.rational.test.lt.recsession
+    dependencies: 
+      - path: /PizzaaDemoTest/httptest.recdata
+        type: recsessionRecdata
+  - name: httptest.testsuite
+    type: com.ibm.rational.test.lt.test
+    version: 11.0.4.0
+    properties: 
+      features: 'com.ibm.rational.test.lt.feature.lt,com.ibm.rational.test.lt.feature.http'
+      type: com.ibm.rational.test.lt.lttest
+      uid: A1F03003236BFC40DE46B73135376635
+    dependencies: 
+      - path: /PizzaaDemoTest/httptest.recsession
+        type: testRecsession
+  - name: src
+    resources: 
